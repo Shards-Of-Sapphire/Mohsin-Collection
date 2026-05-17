@@ -1,0 +1,124 @@
+:root {
+  /* Midnight Luxury Color Scheme */
+  --bg-midnight: #12131f;
+  --text-gold-light: #fde688;
+  --text-gold-dark: #975e29;
+  --text-light: #f7f5f0;
+  --border-subtle: rgba(151, 94, 41, 0.25);
+}
+
+/* Base Body Styling */
+body {
+  background-color: var(--bg-midnight);
+  color: var(--text-light);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, .luxury-heading {
+  color: var(--text-gold-light);
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-top: 0;
+}
+
+/* Strategic Whitespace Layout Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Luxury Product Grid Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* High-Ticket Interactive Buttons */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--text-gold-light);
+  color: var(--text-gold-light);
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.btn-luxury:hover {
+  background: var(--text-gold-light);
+  color: var(--bg-midnight);
+}
+
+.btn-concierge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--text-gold-dark);
+  color: var(--text-light);
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: 100%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.btn-concierge:hover {
+  border-color: var(--text-gold-light);
+  color: var(--text-gold-light);
+  background: rgba(253, 230, 136, 0.03);
+}
+
+.btn-concierge svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Technical Specifications Data Table */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+}
+
+.specs-table th, .specs-table td {
+  padding: 12px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+}
+
+.specs-table th {
+  color: var(--text-gold-dark);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  width: 40%;
+}
+
+.specs-table td {
+  color: var(--text-light);
+}

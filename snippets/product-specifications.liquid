@@ -1,0 +1,35 @@
+{% comment %}
+  Renders product asset specifications. Uses standard metafield definitions 
+  (custom.purity, custom.gross_weight, custom.net_weight, custom.stone_details) 
+  which can be populated easily via the Shopify Admin UI.
+{% endcomment %}
+
+<div class="product-specifications-container">
+  <h3 class="luxury-heading" style="font-size: 1.2rem; margin-top: 2rem;">Product Specifications</h3>
+  <table class="specs-table">
+    <tbody>
+      <tr>
+        <th>Purity Certification</th>
+        <td>{{ product.metafields.custom.purity | default: "22K BIS Hallmarked Gold" }}</td>
+      </tr>
+      <tr>
+        <th>Gross Weight</th>
+        <td>{{ product.metafields.custom.gross_weight | default: "Not Specified" }}</td>
+      </tr>
+      <tr>
+        <th>Net Gold Weight</th>
+        <td>{{ product.metafields.custom.net_weight | default: "Refer to description" }}</td>
+      </tr>
+      {% if product.metafields.custom.stone_details %}
+        <tr>
+          <th>Gemstone Settings</th>
+          <td>{{ product.metafields.custom.stone_details }}</td>
+        </tr>
+      {% endif %}
+      <tr>
+        <th>Availability Status</th>
+        <td>Exclusively Made to Order (Hyderabad Custom Atelier)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

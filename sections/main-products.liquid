@@ -1,0 +1,58 @@
+<section class="container" data-section-id="{{ section.id }}">
+  <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
+    
+    <!-- Left Hand Side: High-Resolution Imagery Assets Node -->
+    <div style="flex: 1 1 500px;">
+      {% if product.featured_image %}
+        <div class="product-image-wrapper" style="border: 1px solid var(--border-subtle); background: rgba(255,255,255,0.01);">
+          {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'eager', class: 'main-product-img', style: 'width:100%; height:auto; display:block;' }}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Hand Side: Strategic Purchase Metrics Info Panel -->
+    <div style="flex: 1 1 400px; display: flex; flex-direction: column; justify-content: center;">
+      <span style="color: var(--text-gold-dark); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Exclusive Collection</span>
+      <h1>{{ product.title }}</h1>
+      
+      <div style="font-size: 1.5rem; color: var(--text-gold-light); font-weight: 300; margin: 1rem 0 2rem 0;">
+        {{ product.price | money_with_currency }}
+      </div>
+
+      <div style="margin-bottom: 2rem; color: var(--text-light); font-size: 0.95rem; opacity: 0.85;">
+        {{ product.description }}
+      </div>
+
+      <!-- Execution Form Actions Handler -->
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        
+        <!-- Native Shopify Checkout Pipeline Execution Call -->
+        <button type="submit" name="add" class="btn-luxury">
+          Secure This Piece
+        </button>
+      {% endform %}
+
+      <!-- High-Ticket Upper-Middle Class Concierge Interaction Bridge -->
+      <a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20viewing%20the%20{{ product.title | url_encode }}%20(SKU:%20{{ product.selected_or_first_available_variant.sku }}).%20Please%20connect%20me%20with%20a%20design%20consultant." 
+         class="btn-concierge" 
+         target="_blank" 
+         rel="noopener">
+        {% render 'icon-whatsapp' %}
+        Request Private Viewing
+      </a>
+
+      <!-- Inclusion of Transparency Specification Data Table Element -->
+      {% render 'product-specifications' %}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product Detail",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
