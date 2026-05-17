@@ -1,22 +1,11 @@
 {
   "current": {
-    "sections": {
-      "header": {
-        "type": "header",
-        "settings": {}
-      },
-      "footer": {
-        "type": "footer",
-        "settings": {}
-      }
-    },
+    "sections": {},
     "settings": {
       "color_bg_midnight": "#12131f",
       "color_gold_light": "#fde688",
       "color_gold_dark": "#975e29",
-      "color_text_light": "#f7f5f0",
-      "font_heading_custom": "Cinzel, Playfair Display, serif",
-      "font_body_custom": "Inter, sans-serif"
+      "color_text_light": "#f7f5f0"
     }
   }
 }
