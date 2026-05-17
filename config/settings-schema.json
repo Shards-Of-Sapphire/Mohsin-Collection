@@ -1,0 +1,64 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Mohsin Jewelers Luxury Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Developer Atelier",
+    "theme_documentation_url": "https://github.com/",
+    "theme_support_url": "https://github.com/"
+  },
+  {
+    "name": "Midnight Luxury Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Core Palette"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_midnight",
+        "label": "Background (Midnight)",
+        "default": "#12131f"
+      },
+      {
+        "type": "color",
+        "id": "color_gold_light",
+        "label": "Primary Text / Accents (Light Gold)",
+        "default": "#fde688"
+      },
+      {
+        "type": "color",
+        "id": "color_gold_dark",
+        "label": "Muted Elements / Boarders (Deep Bronze)",
+        "default": "#975e29"
+      },
+      {
+        "type": "color",
+        "id": "color_text_light",
+        "label": "Body Text Readable Layer",
+        "default": "#f7f5f0"
+      }
+    ]
+  },
+  {
+    "name": "Luxury Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Font Selections"
+      },
+      {
+        "type": "text",
+        "id": "font_heading_custom",
+        "label": "Heading Font Family Name",
+        "default": "Cinzel, Playfair Display, serif"
+      },
+      {
+        "type": "text",
+        "id": "font_body_custom",
+        "label": "Body Font Family Name",
+        "default": "Inter, sans-serif"
+      }
+    ]
+  }
+]

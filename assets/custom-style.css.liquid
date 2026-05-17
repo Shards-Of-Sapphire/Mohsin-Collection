@@ -1,9 +1,9 @@
 :root {
-  /* Midnight Luxury Color Scheme */
-  --bg-midnight: #12131f;
-  --text-gold-light: #fde688;
-  --text-gold-dark: #975e29;
-  --text-light: #f7f5f0;
+  /* Dynamic values mapped directly from settings_data.json presets */
+  --bg-midnight: {{ settings.color_bg_midnight }};
+  --text-gold-light: {{ settings.color_gold_light }};
+  --text-gold-dark: {{ settings.color_gold_dark }};
+  --text-light: {{ settings.color_text_light }};
   --border-subtle: rgba(151, 94, 41, 0.25);
 }
 
