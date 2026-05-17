@@ -1,0 +1,61 @@
+<header class="luxury-header">
+  <div class="header-container">
+    <a href="/" class="brand-logo luxury-heading">Mohsin Collection</a>
+    <nav class="nav-links">
+      <a href="/collections/all" class="nav-item">All Creations</a>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="nav-item concierge-link">Private Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+.luxury-header {
+  background-color: var(--bg-midnight);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--text-gold-light);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-item {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+.nav-item:hover {
+  color: var(--text-gold-light);
+}
+.concierge-link {
+  color: var(--text-gold-light);
+  border-bottom: 1px dashed var(--text-gold-dark);
+  padding-bottom: 2px;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Luxury Header",
+  "tag": "header",
+  "settings": []
+}
+{% endschema %}

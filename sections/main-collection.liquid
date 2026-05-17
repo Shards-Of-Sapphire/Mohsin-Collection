@@ -1,0 +1,24 @@
+<section class="container">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h1 class="luxury-heading" style="font-size: 2.2rem; margin-bottom: 0.5rem;">{{ collection.title }}</h1>
+    <p style="font-size: 0.9rem; color: var(--text-gold-dark); text-transform: uppercase; letter-spacing: 0.1em;">
+      {{ collection.products_count }} Curated Pieces Available
+    </p>
+  </div>
+
+  <div class="product-grid">
+    {% for product in collection.products %}
+      {% render 'card-product', product: product %}
+    {% else %}
+      <p style="text-align: center; grid-column: 1/-1; opacity: 0.6; padding: 4rem 0;">No collections are currently allocated live.</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Collection Catalog",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

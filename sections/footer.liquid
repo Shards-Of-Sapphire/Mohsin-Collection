@@ -1,0 +1,50 @@
+<footer class="luxury-footer">
+  <div class="container" style="padding: 3rem 2rem 1.5rem 2rem;">
+    <div class="footer-grid">
+      <div>
+        <h4 class="luxury-heading" style="font-size: 1.1rem; margin-bottom: 1rem;">Mohsin Collection</h4>
+        <p style="font-size: 0.85rem; opacity: 0.7; max-width: 300px;">Generational family artistry curated for the business class. Crafted in Hyderabad, delivered securely across India.</p>
+      </div>
+      <div>
+        <h4 class="luxury-heading" style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1rem;">Assurance</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; opacity: 0.8; line-height: 2;">
+          <li>✓ 100% BIS Hallmarked Artistry</li>
+          <li>✓ Insured Value Shipping</li>
+          <li>✓ Secure Escrow Checkout</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} Mohsin Collection. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.luxury-footer {
+  background-color: #0b0c13; /* Slightly deeper contrast shift than body background */
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 5rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  border-bottom: 1px solid rgba(151, 94, 41, 0.1);
+  padding-bottom: 2rem;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--text-gold-dark);
+}
+</style>
+
+{% schema %}
+{
+  "name": "Luxury Footer",
+  "tag": "footer",
+  "settings": []
+}
+{% endschema %}
