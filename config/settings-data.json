@@ -2,10 +2,18 @@
   "current": {
     "sections": {},
     "settings": {
+      "favicon": "",
+      "logo": "",
+      "logo_width": 180,
       "color_bg_midnight": "#12131f",
+      "color_bg_card": "#181a29",
       "color_gold_light": "#fde688",
       "color_gold_dark": "#975e29",
-      "color_text_light": "#f7f5f0"
+      "color_text_light": "#f7f5f0",
+      "whatsapp_number": "91XXXXXXXXXX",
+      "whatsapp_label": "Request Private Viewing",
+      "social_instagram": "https://instagram.com",
+      "social_facebook": "https://facebook.com"
     }
   }
 }
