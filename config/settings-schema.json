@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Mohsin Jewelers Luxury Theme",
+    "theme_name": "Mohsin Collection",
     "theme_version": "1.0.0",
     "theme_author": "Developer Atelier",
     "theme_documentation_url": "https://github.com/",
@@ -29,7 +29,7 @@
       {
         "type": "color",
         "id": "color_gold_dark",
-        "label": "Muted Elements / Boarders (Deep Bronze)",
+        "label": "Muted Elements / Borders (Deep Bronze)",
         "default": "#975e29"
       },
       {

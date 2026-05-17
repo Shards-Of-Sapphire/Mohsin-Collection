@@ -1,0 +1,35 @@
+{
+  "general": {
+    "search": {
+      "placeholder": "Search our collections...",
+      "submit": "Search"
+    },
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Secure This Piece",
+      "sold_out": "Bespoke / Allocated",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "price": "Investment Value",
+      "specifications": "Product Specifications"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Selected Curations",
+      "checkout": "Proceed to Secure Checkout",
+      "empty": "Your curation drawer is empty.",
+      "subtotal": "Subtotal Value"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read Editorial"
+    }
+  }
+}
