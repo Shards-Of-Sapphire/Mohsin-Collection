@@ -6,31 +6,104 @@
     "theme_author": "Developer Atelier"
   },
   {
+    "name": "Branding & Identity",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon Image (Browser Tab Icon)"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Custom Luxury Brand Logo Asset"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 100,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Custom Logo Render Width",
+        "default": 180
+      }
+    ]
+  },
+  {
     "name": "Midnight Luxury Colors",
     "settings": [
       {
+        "type": "header",
+        "content": "Surface Layers"
+      },
+      {
         "type": "color",
         "id": "color_bg_midnight",
-        "label": "Background (Midnight)",
+        "label": "Primary Base Canvas Background",
         "default": "#12131f"
       },
       {
         "type": "color",
+        "id": "color_bg_card",
+        "label": "Product Grid Container Background",
+        "default": "#181a29"
+      },
+      {
+        "type": "header",
+        "content": "Typography & Accents"
+      },
+      {
+        "type": "color",
         "id": "color_gold_light",
-        "label": "Primary Accents (Light Gold)",
+        "label": "Primary Display Accent (Light Gold)",
         "default": "#fde688"
       },
       {
         "type": "color",
         "id": "color_gold_dark",
-        "label": "Muted Elements (Deep Bronze)",
+        "label": "Structural Linework / Muted Trim (Deep Bronze)",
         "default": "#975e29"
       },
       {
         "type": "color",
         "id": "color_text_light",
-        "label": "Body Text Readable Layer",
+        "label": "High-Readability Body Copy Text",
         "default": "#f7f5f0"
+      }
+    ]
+  },
+  {
+    "name": "High-Ticket Concierge Routes",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "Operational WhatsApp Business Number (With Country Code)",
+        "default": "91XXXXXXXXXX"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_label",
+        "label": "Global Call-to-Action Text Label",
+        "default": "Request Private Viewing"
+      }
+    ]
+  },
+  {
+    "name": "Marketing & Social Connections",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram Profile Target Link URL",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook Business Page Link URL",
+        "default": "https://facebook.com"
       }
     ]
   }
