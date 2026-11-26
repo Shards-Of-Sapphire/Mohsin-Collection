@@ -1,6 +1,6 @@
 # Mohsin Collection — Real-Time Mobile Showroom & Pocket Catalog
 
-A zero-overhead, mobile-first digital showroom and real-time inventory system engineered by **Sapphire Systems** for **Mohsin Jewelers** (Old City, Hyderabad). Built to bridge Instagram Reels, YouTube Shorts, and WhatsApp forwards directly into verified WhatsApp enquiries and physical showroom visits—running on a ₹0/month serverless stack with zero weekday maintenance.
+A zero-overhead, mobile-first digital showroom and real-time inventory system engineered by **Sapphire Systems** for **Mohsin Collection** (Old City, Hyderabad). Built to bridge Instagram Reels, YouTube Shorts, and WhatsApp forwards directly into verified WhatsApp enquiries and physical showroom visits—running on a ₹0/month serverless stack with zero weekday maintenance.
 
 ---
 
@@ -100,7 +100,7 @@ Add the following keys to your Vercel or Cloudflare Pages project settings:
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 NEXT_PUBLIC_WHATSAPP_NUMBER=91XXXXXXXXXX
-NEXT_PUBLIC_MAPS_URL=[https://maps.google.com/?q=Mohsin+Collection+Hyderabad](https://maps.google.com/?q=Mohsin+Collectiom+Hyderabad)
+NEXT_PUBLIC_MAPS_URL=[https://maps.google.com/?q=Mohsin+Collection+Hyderabad](https://maps.google.com/?q=Mohsin+Collection+Hyderabad)
 ```
 
 ### Step 2: Deploy from GitHub
