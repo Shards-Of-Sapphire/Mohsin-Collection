@@ -1,4 +1,4 @@
-# Mohsin Jewelers — Real-Time Mobile Showroom & Pocket Catalog
+# Mohsin Collection — Real-Time Mobile Showroom & Pocket Catalog
 
 A zero-overhead, mobile-first digital showroom and real-time inventory system engineered by **Sapphire Systems** for **Mohsin Jewelers** (Old City, Hyderabad). Built to bridge Instagram Reels, YouTube Shorts, and WhatsApp forwards directly into verified WhatsApp enquiries and physical showroom visits—running on a ₹0/month serverless stack with zero weekday maintenance.
 
@@ -100,7 +100,7 @@ Add the following keys to your Vercel or Cloudflare Pages project settings:
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 NEXT_PUBLIC_WHATSAPP_NUMBER=91XXXXXXXXXX
-NEXT_PUBLIC_MAPS_URL=[https://maps.google.com/?q=Mohsin+Jewelers+Hyderabad](https://maps.google.com/?q=Mohsin+Jewelers+Hyderabad)
+NEXT_PUBLIC_MAPS_URL=[https://maps.google.com/?q=Mohsin+Collection+Hyderabad](https://maps.google.com/?q=Mohsin+Collectiom+Hyderabad)
 ```
 
 ### Step 2: Deploy from GitHub
@@ -113,4 +113,4 @@ NEXT_PUBLIC_MAPS_URL=[https://maps.google.com/?q=Mohsin+Jewelers+Hyderabad](http
 
 1. Open `/admin` in Chrome/Safari on the showroom phone, sign in once, and tap **Add to Home Screen** to install the Pocket Catalog PWA.
 2. Convert the showroom contact number to **WhatsApp Business**, pin the store address on Google Maps, and configure Quick Replies (`/rate`, `/making`, `/location`, `/timings`).
-3. Link the live showroom URL in the **Mohsin Jewelers** Instagram bio, YouTube channel description, and pinned Reel/Short comments.
+3. Link the live showroom URL in the **Mohsin Collection** Instagram bio, YouTube channel description, and pinned Reel/Short comments.
