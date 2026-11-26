@@ -1,102 +1,116 @@
-# Mohsin Collection — Premium Custom Shopify OS 2.0 Theme
+# Mohsin Jewelers — Real-Time Mobile Showroom & Pocket Catalog
 
-A bespoke, lightweight storefront engineered from the ground up using vanilla HTML, CSS, Liquid, and JavaScript. This theme rejects the bloat of marketplace templates in favor of sub-second load times, granular UX control, and a "Midnight Luxury" design system tailored specifically for high-ticket, business-class consumers.
+A zero-overhead, mobile-first digital showroom and real-time inventory system engineered by **Sapphire Systems** for **Mohsin Jewelers** (Old City, Hyderabad). Built to bridge Instagram Reels, YouTube Shorts, and WhatsApp forwards directly into verified WhatsApp enquiries and physical showroom visits—running on a ₹0/month serverless stack with zero weekday maintenance.
 
 ---
 
-## 💎 Architectural Philosophy: Systems Over Products
+## 💎 Architectural Philosophy: Frictionless Counter Ops & Social Proof
 
-This storefront is architected as a **psychological filtering system** to elevate the brand asset value and completely eliminate traditional retail bargaining friction:
+This application rejects bloated e-commerce carts and complex admin dashboards in favour of how Old City jewelry buyers and showroom counters actually operate:
 
-* **Space-Forward Layouts:** Heavy whitespace ratios signal premium pricing and exclusivity, separating the collection from cluttered mass-market grids.
-* **Empirical Valuation Transparency:** Hardcoded technical specification grids present jewelry weights and purity certifications as immutable physical facts rather than fluid retail metrics.
-* **Concierge Acquisition Vectors:** High-ticket items bridge directly into personalized WhatsApp Design Consultation streams to capture upper-middle-class leads through high-touch service pipelines.
+- **Ready-Stock Transparency (No Custom Orders):** The showroom displays ready-to-buy inventory only. When a piece sells, it moves to the bottom of the feed as a greyed-out **Sold Out** card rather than offering misleading "custom order" prompts—preserving massive catalog depth as social proof while eliminating dead-stock enquiries at the counter.
+- **10-Second Counter Adoption (`/admin` PWA):** Built directly into the same repository as an installable Progressive Web App. Shop staff open the home-screen icon on the counter phone, snap a photo using the rear camera, and publish—or tap **Mark Sold** at billing in one tap.
+- **WhatsApp-First Acquisition Vectors:** Replaces traditional checkout flows with pre-filled `wa.me` deep links tagged with the exact item code (`MJ-104`) so buyers can instantly ask about **916 HUID purity, today's gold rate, and making charges**, or open the pinned Google Maps showroom location.
+- **Zero-Cost Serverless Runtime:** Deployed statically from GitHub to Vercel/Cloudflare Pages and backed by Supabase free tiers—sub-second loads on 4G/5G mobile data with zero server bills.
 
 ---
 
 ## 🎨 Design Token Specifications
 
-The visual interface utilizes a soft-contrast, luxury-dark configuration to allow high-resolution jewelry photography to stand out vibrantly on mobile displays.
+The visual interface retains the high-contrast **"Midnight Luxury"** dark palette so gold, polki, and bridal photography pop cleanly on mobile screens:
 
-* **Background (Midnight Space):** `#12131f`
-* **Primary Accent (Light Gold Text):** `#fde688`
-* **Muted Trim / Borders (Deep Bronze):** `#975e29`
-* **Body Content Layer (Warm Cream):** `#f7f5f0`
-* **Typography Scale:** `Cinzel` / `Playfair Display` (Headings) | `Inter` (Functional Body / Metadata)
+- **Background (Midnight Space):** `#12131f`
+- **Primary Accent (Light Gold Text):** `#fde688`
+- **Muted Trim / Borders (Deep Bronze):** `#975e29`
+- **Body Content Layer (Warm Cream):** `#f7f5f0`
+- **Sold Out Card State:** Desaturated imagery (`opacity-50`) + `Sold Out` badge (item-specific WhatsApp CTA removed)
+- **Typography Scale:** `Cinzel` / `Playfair Display` (Headings) | `Inter` (Functional Body, Item Codes & Metadata)
 
 ---
 
 ## 📂 Directory Architecture Map
 
-The repository conforms strictly to the Shopify Online Store 2.0 theme standard:
+Single-repository architecture housing both the public mobile showroom and the protected `/admin` counter PWA:
 
 ```text
-├── assets/
-│   ├── custom-style.css.liquid   # Compiled global luxury design tokens & layouts
-│   └── mohsin-core.js            # Core interactive states and UI scripts
-├── config/
-│   ├── settings_data.json        # Schema data assignments and current state configurations
-│   └── settings_schema.json      # Dynamic inputs mapping schema for the Shopify Editor panel
-├── layout/
-│   └── theme.liquid              # Master HTML document wrapper and engine hooks
-├── locales/
-│   └── en.default.json           # Structural interface translation string matrix
-├── sections/
-│   ├── footer.liquid             # Bottom brand footprint, trust metrics & copyright definitions
-│   ├── header.liquid             # Sticky, minimalist top navigation bar
-│   ├── main-collection.liquid    # Dynamic item loop layout engine for catalog routes
-│   └── main-product.liquid       # High-value product detailing page with contextual actions
-├── snippets/
-│   ├── card-product.liquid       # Modular catalog preview listing tile
-│   ├── icon-whatsapp.liquid      # Scalable Vector Graphic token for concierge triggers
-│   └── product-specifications.liquid # Explicit validation metrics grid
-└── templates/
-    ├── cart.json                 # Transaction route schema mapping layout
-    ├── index.json                # Primary Homepage grid configuration map
-    └── product.json              # Direct Product listing dynamic layout index
-
+├── public/
+│   ├── manifest.json             # PWA config for "Add to Home Screen" on shop phone
+│   └── icons/                    # Home-screen launcher icons for the counter app
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx            # Master HTML wrapper, fonts, and luxury theme tokens
+│   │   ├── page.tsx              # Public live showroom grid + "Available Only" toggle
+│   │   └── admin/
+│   │       └── page.tsx          # Protected rear-camera uploader & one-tap "Mark Sold" feed
+│   ├── components/
+│   │   ├── ProductCard.tsx       # Available vs. greyed-out Sold Out tile logic
+│   │   ├── FilterBar.tsx         # Category pills (Bridal, Necklace, Bangles, Daily Wear)
+│   │   └── FloatingConcierge.tsx # General "Ask What Just Arrived" WhatsApp & Maps bar
+│   ├── lib/
+│   │   ├── supabase.ts           # Supabase client initialization
+│   │   ├── compressImage.ts      # Client-side WebP compression (~200KB cap before upload)
+│   │   └── whatsapp.ts           # Pre-filled wa.me deep-link builders
+│   └── styles/
+│       └── globals.css           # Custom design tokens and utility styles
+├── .env.example                  # Required public Supabase & WhatsApp environment keys
+└── package.json                  # Project dependencies (Next.js/React, Supabase JS, browser-image-compression)
 ```
 
 ---
 
-## ⚙️ Data Layer Requirements (Shopify Metafields)
+## ⚙️ Data Layer & Inventory Rules (Supabase)
 
-To power the empirical validation specifications table without hardcoding individual item data, the following Custom Data Fields **must** be generated in the Shopify Admin interface:
+### 1. Database Schema (`products` table)
 
-1. Navigate to **Settings > Custom Data > Products > Add Definition**.
-2. Configure these four definitions with exact keys:
+Configure a 7-column PostgreSQL table in Supabase:
 
-| Field Label | Namespace & Key | Data Type | Purpose |
+| Column | Data Type | Default / Constraint | Purpose |
 | --- | --- | --- | --- |
-| **Purity Certification** | `custom.purity` | Single line text | e.g., "22K BIS Hallmarked Gold" |
-| **Gross Weight** | `custom.gross_weight` | Single line text | Total mass including settings (e.g., "14.25g") |
-| **Net Gold Weight** | `custom.net_weight` | Single line text | Pure alloy mass calculation (e.g., "12.80g") |
-| **Gemstone Settings** | `custom.stone_details` | Multi-line text | Cut, clarity, and stone allocations |
+| `id` | `uuid` | `gen_random_uuid()` (PK) | Unique record identifier |
+| `code` | `text` | `unique`, `not null` | Auto-incremented showroom tag (e.g., `MJ-104`) |
+| `category` | `text` | `not null` | `Bridal`, `Necklace`, `Bangles`, or `Daily Wear` |
+| `image_url` | `text` | `not null` | Public WebP URL from `catalog-images` bucket |
+| `status` | `text` | `'available'` | `'available'` or `'sold_out'` |
+| `created_at` | `timestamptz` | `now()` | Used to sort newest arrivals first |
+| `sold_at` | `timestamptz` | `nullable` | Timestamp set when marked `sold_out` |
+
+### 2. Feed Sorting & Lifecycle Logic
+
+- **Priority Ordering:** Public queries sort `status ASC` (`available` pinned at the top, `sold_out` pushed to the bottom) and `created_at DESC` within each group.
+- **Available-Only Toggle:** Shoppers can toggle a single filter at the top of the showroom to hide `sold_out` cards immediately.
+- **45-Day Sold Auto-Expiry:** Items with `sold_at` older than 30–45 days are automatically excluded from the public query so the showroom stays massive and active without turning into a stale archive.
+- **Client-Side Image Compression:** All camera captures (`capture="environment"`) are compressed in-browser to **~200KB WebP** before hitting Supabase Storage, keeping 4G page loads instant and staying well inside the 1GB free storage tier.
+
+### 3. Security & Row Level Security (RLS)
+
+- **Auth:** Create a single shop admin account in **Supabase Auth > Users** and disable public user sign-ups.
+- **Table & Bucket Policies:** Enable RLS on `products` and the `catalog-images` storage bucket:
+  - `SELECT`: Public (`anon` + `authenticated`)
+  - `INSERT` & `UPDATE`: Restricted strictly to `authenticated` role
 
 ---
 
-## 🚀 Deployment Instructions
+## 🚀 Deployment & Counter Onboarding
 
-Because this codebase bypasses continuous deployment middleware to keep workflows clean, it can be packaged and deployed directly into production via the Shopify Admin Dashboard.
+### Step 1: Configure Environment Variables
 
-### Step 1: Compile the Source Package
+Add the following keys to your Vercel or Cloudflare Pages project settings:
 
-1. On your machine, open the root theme directory containing your assets, layouts, and templates.
-2. Select all folders (`assets`, `config`, `layout`, `locales`, `sections`, `snippets`, `templates`).
-3. Compress the selected directories into a single standard `.zip` file. Name it `mohsin-collection-production.zip`.
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_WHATSAPP_NUMBER=91XXXXXXXXXX
+NEXT_PUBLIC_MAPS_URL=[https://maps.google.com/?q=Mohsin+Jewelers+Hyderabad](https://maps.google.com/?q=Mohsin+Jewelers+Hyderabad)
+```
 
-### Step 2: Push into Production
+### Step 2: Deploy from GitHub
 
-1. Authenticate into the **Shopify Admin Dashboard**.
-2. Using the left-hand navigation pane, head to **Sales Channels > Online Store > Themes**.
-3. Locate the *Theme Library* container matrix.
-4. Click the **Add Theme** selector dropdown, then click **Upload zip file**.
-5. Drag and drop `mohsin-collection-production.zip` into the modal and click **Upload**.
-6. Once processing finishes, select **Actions > Publish** next to your uploaded package to take the custom storefront live.
+1. Push the repository to GitHub (`main` branch).
+2. Import the repo into **Vercel** or **Cloudflare Pages** (zero-config static/hybrid deployment).
+3. Verify the public showroom at `/` and the login gate at `/admin`.
 
----
+### Step 3: Shop Phone & WhatsApp Business Setup
 
-## 🛠️ Production Verification Maintenance
-
-* **To Alter Content Language Strings:** Edit `locales/en.default.json` directly to change globally distributed text (such as replacing "Secure This Piece" with alternative luxury strings).
-* **To Update Styling Layouts:** Add pure CSS definitions inside `assets/custom-style.css.liquid` directly underneath the variable architecture block. Use root tokens (`var(--text-gold-light)`) to retain color parity across elements.
+1. Open `/admin` in Chrome/Safari on the showroom phone, sign in once, and tap **Add to Home Screen** to install the Pocket Catalog PWA.
+2. Convert the showroom contact number to **WhatsApp Business**, pin the store address on Google Maps, and configure Quick Replies (`/rate`, `/making`, `/location`, `/timings`).
+3. Link the live showroom URL in the **Mohsin Jewelers** Instagram bio, YouTube channel description, and pinned Reel/Short comments.
